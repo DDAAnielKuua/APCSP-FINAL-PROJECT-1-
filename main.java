@@ -62,6 +62,10 @@ public class Main {
                 System.out.print("Do you still have other items you want to buy? (Yes/No) ");
                 String option = scanner.nextLine().trim().toUpperCase();
                 if (option.equals("NO")) {
+                    if (pList.size() <= 1) {
+                        System.out.println("Sorry, you need to input at least 2 items!");
+                        break;
+                    }
                     stillWantToBuy = false;
                     validOption = true;
                     if (total < budget) {
